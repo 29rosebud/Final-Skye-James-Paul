@@ -20,9 +20,9 @@ public class Hammerclass
 		current=rhammer;
 	}
 
-	public void draw(Graphics g,int x1,int y1)
+	public void draw(Graphics g)
 	{
-		g.drawImage(current,x1,y1,null);
+		g.drawImage(current,x,y,null);
 	}
 	public void coordSwap()
 	{
@@ -53,5 +53,19 @@ public class Hammerclass
 		{
 			current=rhammer;
 		}
+
+	}
+	public int getX()
+	{
+		return x;
+	}
+	public int getY()
+	{
+		return y;
+	}
+	public void move(int x, int y)
+	{
+		this.x=x;
+		this.y=y;
 	}
 }
