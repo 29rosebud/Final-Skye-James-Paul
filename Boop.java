@@ -11,13 +11,13 @@ import java.awt.Graphics;
 import java.awt.Color;
 import java.util.Random;
 
-public class Boop extends JApplet implements ActionListener, KeyListener, MouseListener, MouseMotionListener
+public class Driver extends JApplet implements ActionListener, KeyListener, MouseListener, MouseMotionListener
 {
 	int XMove,YMove,X,Y;
-	Image i,ii,b;
-	//mouse
+	Image i,ii,iii,iiii,b;
   Timer time;
   Finalclass hog;
+  Hammerclass Smash;
   JLabel points;
   int point=0;
 
@@ -255,7 +255,7 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
    {
 	int DistX=e.getX();
 		int DistY=e.getY();
-
+	//if
 		X=DistX-XMove;
 		Y=DistY-YMove;
 		repaint();
@@ -265,9 +265,18 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
    {
 		int DistX=e.getX();
 		int DistY=e.getY();
+		//if() {
+		Smash.move(DistX-XMove,DistY-YMove);
 
-		X=DistX-XMove;
-		Y=DistY-YMove;
+		if(Smash.getX()>=500)
+		{
+			Smash.coordSwap();
+		}
+			else if(Smash.getX()<=500)
+		{
+			Smash.coordSwap();
+		}
+
 		repaint();
    }
 
@@ -280,12 +289,13 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
    addKeyListener(this);
    addMouseListener(this);
    addMouseMotionListener(this);
-   time=new Timer(100,this);
+   time=new Timer(60,this);
    time.start();
 
    hog=new Finalclass();
   sadseal=getImage(getDocumentBase(),"sadseal.png");
   happyseal=getImage(getDocumentBase(),"seal.png");
+
 
   points=new JLabel(point+"");
   c.add(points);
@@ -300,7 +310,9 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
   b=getImage(getDocumentBase(),"Background image 2 edit.png");
   i=getImage(getDocumentBase(),"hammer1 done.png");
   ii=getImage(getDocumentBase(),"hammer3 done.png");
-
+  iii=getImage(getDocumentBase(),"hammer2 done.png");
+  iiii=getImage(getDocumentBase(),"hammer4 DONE.png");
+  Smash=new Hammerclass(i,ii,iii,iiii,0,0);
 
 
   }
@@ -326,9 +338,10 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
      {
      seal3.draw(g,x3,y3);
      }
-     //g.drawImage(i,50,50,this);
-     //g.drawImage(happyseal,50,50,this);
-         g.drawImage(i,X,Y,this);
+    // g.drawImage(i,50,50,this);
+    // g.drawImage(happyseal,50,50,this);
+    	Smash.draw(g);
+         //g.drawImage(i,X,Y,this);
     }
 
    }
