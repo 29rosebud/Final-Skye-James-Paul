@@ -11,7 +11,7 @@ import java.awt.Graphics;
 import java.awt.Color;
 import java.util.Random;
 
-public class Driver extends JApplet implements ActionListener, KeyListener, MouseListener, MouseMotionListener
+public class Boop extends JApplet implements ActionListener, KeyListener, MouseListener, MouseMotionListener
 {
 	int XMove,YMove,X,Y;
 	Image i,ii,iii,iiii,b;
@@ -232,6 +232,11 @@ public class Driver extends JApplet implements ActionListener, KeyListener, Mous
     }
     public void mouseClicked(MouseEvent e)
     {
+		seal1.swap();
+		seal2.swap();
+		seal3.swap();
+		Smash.clickSwap();
+
 
  }
  public void mousePressed(MouseEvent e)
@@ -270,11 +275,11 @@ public class Driver extends JApplet implements ActionListener, KeyListener, Mous
 
 		if(Smash.getX()>=500)
 		{
-			Smash.coordSwap();
+			Smash.rightSwap();
 		}
-			else if(Smash.getX()<=500)
+			 else if(Smash.getX()<=500)
 		{
-			Smash.coordSwap();
+			Smash.leftSwap();
 		}
 
 		repaint();
