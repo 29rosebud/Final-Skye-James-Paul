@@ -1,4 +1,4 @@
-//Skylar, James, and Maybe Paul
+///Skylar, James, and Maybe Paul
 //Final bop
 // 5/18/17
 
@@ -20,7 +20,7 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
   Hammerclass Smash;
   JLabel points;
   int point=0;
-
+   int disp1,disp2,disp3;
   Image happyseal,sadseal;
   seal seal3;
   seal seal2;
@@ -32,6 +32,7 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
   int x1=135;
   int y1=600;
   int cir;
+  int sealiox1,sealiox2,sealiox3,sealioy1,sealioy2,sealioy3;
   public void actionPerformed(ActionEvent e)
   {
   if(e.getSource()==time)
@@ -40,122 +41,35 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
   {
    if(seal1.sealCheck()==true)
    {
-    System.out.println("draw");
-    check1=true;
-    circ=r.nextInt(9);
-    System.out.println(circ);
-
-    if(circ==0)
-    {
-     System.out.println("0");
-     x1=(135+38);
-     y1=(600+25);
-    }
-    else if(circ==1)
-    {
-     System.out.println("1");
-     x1=(135+38);
-     y1=(410+25);
-
-    }
-    else if(circ==2)
-    {
-     System.out.println("2");
-     x1=(135+38);
-     y1=(190+25);
-    }
-    else if(circ==3)
-    {
-     System.out.println("3");
-     x1=(488+38);
-     y1=(190+25);
-    }
-    else if(circ==4)
-    {
-     System.out.println("4");
-     x1=(488+38);
-     y1=(410+25);
-    }
-    else if(circ==5)
-    {
-     System.out.println("5");
-     x1=(490+38);
-     y1=(460+25);
-    }
-    else if(circ==6)
-    {
-     System.out.println("6");
-      x1=(790+38);
-      y1=(600+25);
-    }
-    else if(circ==7)
-    {
-     System.out.println("7");
-      x1=(790+38);
-      y1=(410+25);
-    }
-    else if(circ==8)
-    {
-     System.out.println("8");
-      x1=(780+38);
-      y1=(190+25);
-    }
+	   disp1=0;
+	   check1=true;
+	   sealiox1=r.nextInt(3);
+	   	sealioy1=r.nextInt(3);
+	   	sealioy1++;
+	   	sealiox1++;
+	   	System.out.println("x1 " + sealiox1);
+	   	System.out.println("y1 " + sealioy1);
+	   	seal1.setX(((sealiox1*200)+38));
+	seal1.setY(((sealioy1*200)+25));
 
    }
+
   }
    if(check2==false)
    {
   if(seal2.sealCheck()==true)
    {
-    check2=true;
-    cir=r.nextInt(9);
-    check2=true;
-  if(cir==0)
-  {
-   x2=(135+38);
-   y2=(600+25);
-  }
-  if(cir==1)
-  {
-   x2=(135+38);
-   y2=(410+25);
+	   disp2=0;
+	check2=true;
+	sealiox2=r.nextInt(3);
+		sealioy2=r.nextInt(3);
+		sealioy2++;
+		sealiox2++;
+		System.out.println("x2 " + sealiox2);
+		System.out.println("y2 " + sealioy2);
+		seal2.setX(((sealiox2*200)+38));
+	seal2.setY(((sealioy2*200)+25));
 
-  }
-  if(cir==2)
-  {
-   x2=(135+38);
-   y2=(190+25);
-  }
-  if(cir==3)
-  {
-   x2=(488+38);
-   y2=(190+25);
-  }
-  if(cir==4)
-  {
-   x2=(488+38);
-   y2=(410+25);
-  }
-  if(cir==5)
-  {
-   x2=(490+38);
-   y2=(460+25);
-  }
-  if(cir==6)
-  {
-   x2=(790+38);
-   y2=(600+25);
-  }
-  if(cir==7)
-  {
-    x2=(790+38);
-    y2=(410+25);
-  }
-  if(cir==8)
-  {
-    x2=(780+38);
-    y2=(190+25);
-  }
 
    }
    }
@@ -163,53 +77,41 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
    {
    if(seal3.sealCheck()==true)
    {
-	   check3=true;
- if(cir==0)
-  {
-   x3=(135+38);
-   y3=(600+25);
-  }
-  if(cir==1)
-  {
-   x3=(135+38);
-   y3=(410+25);
-
-  }
-  if(cir==2)
-  {
-   x3=(135+38);
-   y3=(190+25);
-  }
-  if(cir==3)
-  {
-   x3=(488+38);
-   y3=(190+25);
-  }
-  if(cir==4)
-  {
-   x3=(488+38);
-   y3=(410+25);
-  }
-  if(cir==5)
-  {
-   x3=(490+38);
-   y3=(460+25);
-  }
-  if(cir==6)
-  {
-   x3=(790+38);
-   y3=(600+25);
-  }
-  if(cir==7)
-  {
-    x3=(790+38);
-    y3=(410+25);
-  }
-  if(cir==8)
-  {
-    x3=(780+38);
-    y3=(190+25);
-  }
+	   disp3=0;
+	check3=true;
+	sealiox3=r.nextInt(3);
+		sealioy3=r.nextInt(3);
+		sealioy3++;
+		sealiox3++;
+		System.out.println("x3 " + sealiox3);
+		System.out.println("y3 " + sealioy3);
+		seal3.setX(((sealiox3*200)+38));
+	seal3.setY(((sealioy3*200)+25));
+   }
+   if(check1==true)
+   {
+	   disp1++;
+	   if(disp1==15)
+	   {
+		   check1=false;
+		   System.out.println(disp1);
+	   }
+   }
+      if(check2==true)
+      {
+   	   disp2++;
+   	   if(disp2== 15)
+   	   {
+   		   check2=false;
+   	   }
+   }
+      if(check3==true)
+      {
+   	   disp3++;
+   	   if(disp3==15)
+   	   {
+   		   check3=false;
+   	   }
    }
    repaint();
   }
@@ -232,15 +134,53 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
     }
     public void mouseClicked(MouseEvent e)
     {
-		seal1.swap();
-		seal2.swap();
-		seal3.swap();
+		//seal1.swap();
+		//seal2.swap();
+		//seal3.swap();
 		Smash.clickSwap();
 
+		if(seal1.coordCheck(e.getX(),e.getY())==true)
+		{
+			seal1.sad();
+			System.out.println("Seal 1 collide");
+			check1=false;
+			seal1.happy();
+			point++;
+			points.setText(point+"");
+		}
+		else if(seal2.coordCheck(e.getX(),e.getY())==true)
+		{
+			seal2.sad();
+			System.out.println("Seal 2 collide");
+			check2=false;
+			seal2.happy();
+			point++;
+			points.setText(point+"");
+		}
+		else if(seal3.coordCheck(e.getX(),e.getY())==true)
+		{
+			seal3.sad();
+			System.out.println("seal 3 collide");
+			check3=false;
+			seal3.happy();
+			point++;
+			points.setText(point+"");
+		}
+		else if(seal1.coordCheck(e.getX(),e.getY())==false && seal2.coordCheck(e.getX(),e.getY())==false && seal3.coordCheck(e.getX(),e.getY())==false)
+		{
+			System.out.println("YOU SUCK");
+		}
 
+		repaint();
  }
  public void mousePressed(MouseEvent e)
  {
+int DistX=e.getX();
+		int DistY=e.getY();
+	//if
+		X=DistX-XMove;
+		Y=DistY-YMove;
+		repaint();
 
  }
 
@@ -263,6 +203,16 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
 	//if
 		X=DistX-XMove;
 		Y=DistY-YMove;
+		Smash.move(DistX-XMove,DistY-YMove);
+
+				if(Smash.getX()>=600)
+				{
+					Smash.rightSwap();
+				}
+					 else if(Smash.getX()<=600)
+				{
+					Smash.leftSwap();
+		}
 		repaint();
 
    }
@@ -273,11 +223,11 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
 		//if() {
 		Smash.move(DistX-XMove,DistY-YMove);
 
-		if(Smash.getX()>=500)
+		if(Smash.getX()>=600)
 		{
 			Smash.rightSwap();
 		}
-			 else if(Smash.getX()<=500)
+			 else if(Smash.getX()<=600)
 		{
 			Smash.leftSwap();
 		}
@@ -305,9 +255,9 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
   points=new JLabel(point+"");
   c.add(points);
   points.setForeground(Color.BLUE);
-   seal1=new seal(happyseal,sadseal,x1,y1);
-   seal2=new seal(happyseal,sadseal,x2,y2);
-   seal3=new seal(happyseal,sadseal,x3,y3);
+   seal1=new seal(happyseal,sadseal);
+   seal2=new seal(happyseal,sadseal);
+   seal3=new seal(happyseal,sadseal);
 
   //setSize(1200,1000);
 
@@ -333,15 +283,16 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
      if(check1==true)
      {
 
-       seal1.draw(g,x1,y1);
+       seal1.draw(g);
      }
      if(check2==true)
      {
-    seal2.draw(g,x2,y2);
+    seal2.draw(g);
+    //issue with blue circle
      }
      if(check3==true)
      {
-     seal3.draw(g,x3,y3);
+    seal3.draw(g);
      }
     // g.drawImage(i,50,50,this);
     // g.drawImage(happyseal,50,50,this);
