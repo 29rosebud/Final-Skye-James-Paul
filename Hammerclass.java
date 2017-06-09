@@ -54,7 +54,23 @@ public class Hammerclass
 			current=rhammer;
 		}
 
+
 	}
+		public void leftSwap()
+			{
+				if(current==lhammer)
+				{
+					current=rhammer;
+				}
+			}
+			public void rightSwap()
+			{
+				if(current==rhammer)
+				{
+					current=lhammer;
+				}
+			}
+
 	public int getX()
 	{
 		return x;
