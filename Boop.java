@@ -1,4 +1,4 @@
-///Skylar, James, and Maybe Paul
+//Skylar, James, and Maybe Paul
 //Final bop
 // 5/18/17
 
@@ -13,6 +13,7 @@ import java.util.Random;
 
 public class Boop extends JApplet implements ActionListener, KeyListener, MouseListener, MouseMotionListener
 {
+	AudioClip cry;
 	int XMove,YMove,X,Y;
 	Image i,ii,iii,iiii,b;
   Timer time;
@@ -137,7 +138,7 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
 		//seal1.swap();
 		//seal2.swap();
 		//seal3.swap();
-		Smash.clickSwap();
+		//Smash.clickSwap();
 
 		if(seal1.coordCheck(e.getX(),e.getY())==true)
 		{
@@ -147,6 +148,7 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
 			seal1.happy();
 			point++;
 			points.setText(point+"");
+			cry.play();
 		}
 		else if(seal2.coordCheck(e.getX(),e.getY())==true)
 		{
@@ -156,6 +158,7 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
 			seal2.happy();
 			point++;
 			points.setText(point+"");
+			cry.play();
 		}
 		else if(seal3.coordCheck(e.getX(),e.getY())==true)
 		{
@@ -165,6 +168,7 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
 			seal3.happy();
 			point++;
 			points.setText(point+"");
+			cry.play();
 		}
 		else if(seal1.coordCheck(e.getX(),e.getY())==false && seal2.coordCheck(e.getX(),e.getY())==false && seal3.coordCheck(e.getX(),e.getY())==false)
 		{
@@ -181,12 +185,14 @@ int DistX=e.getX();
 		X=DistX-XMove;
 		Y=DistY-YMove;
 		repaint();
+		Smash.clickSwap();
+
 
  }
 
     public void mouseReleased(MouseEvent e)
     {
-
+Smash.clickSwap();
     }
     public void mouseEntered(MouseEvent e)
     {
@@ -268,6 +274,7 @@ int DistX=e.getX();
   iii=getImage(getDocumentBase(),"hammer2 done.png");
   iiii=getImage(getDocumentBase(),"hammer4 DONE.png");
   Smash=new Hammerclass(i,ii,iii,iiii,0,0);
+  	cry=getAudioClip(getDocumentBase(),"baby.wav");
 
 
   }
