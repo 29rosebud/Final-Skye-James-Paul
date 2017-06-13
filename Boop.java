@@ -15,6 +15,8 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
 {
 
  int gameTime=0;
+ boolean check=false;
+ boolean pcheck=false;
  int gametimeSeal1,gametimeSeal2,gametimeSeal3;
  AudioClip cry;
  AudioClip background;
@@ -129,23 +131,23 @@ public class Boop extends JApplet implements ActionListener, KeyListener, MouseL
           repaint();
 
     }
-   /*  if(gameTime-gametimeSeal1 >= 3)
+     if(gameTime-gametimeSeal1 <= 3)
       {
        seal1.happy();
        check1=false;
 
 
       }
-      if(gameTime-gametimeSeal2 >= 3)
+      if(gameTime-gametimeSeal2 <= 3)
       {
        seal2.happy();
        check2=false;
       }
-      if(gameTime-gametimeSeal3 >= 3)
+      if(gameTime-gametimeSeal3 <= 3)
       {
        seal3.happy();
        check3=false;
-  } */
+  }
     repaint();
   }
 
@@ -191,8 +193,12 @@ int DistX=e.getX();
      System.out.println("Seal 1 collide");
      //check1=false;
      //seal1.happy();
+     if(pcheck==false)
+     {
      point++;
+
      points.setText(point+"");
+	 }
      cry.play();
     }
     else if(seal2.coordCheck(e.getX(),e.getY())==true)
@@ -204,9 +210,11 @@ int DistX=e.getX();
       //check2=false;
       //seal2.happy();
 
-
+	if(pcheck==false)
+	{
      point++;
      points.setText(point+"");
+ 	}
      cry.play();
     }
     else if(seal3.coordCheck(e.getX(),e.getY())==true)
@@ -216,8 +224,11 @@ int DistX=e.getX();
      System.out.println("seal 3 collide");
      //check3=false;
      //seal3.happy();
+     if(pcheck==false)
+     {
      point++;
      points.setText(point+"");
+ 	}
      cry.play();
     }
     else if(seal1.coordCheck(e.getX(),e.getY())==false && seal2.coordCheck(e.getX(),e.getY())==false && seal3.coordCheck(e.getX(),e.getY())==false)
@@ -227,7 +238,15 @@ int DistX=e.getX();
      if(lives==0)
      {
      System.out.println("You lose.");
-     time.stop();
+
+     check=true;
+     check1=false;
+     check2=false;
+     check3=false;
+     pcheck=true;
+
+          time.stop();
+          repaint();
      }
   }
 
@@ -252,8 +271,7 @@ Smash.clickSwap();
  int DistX=e.getX();
   int DistY=e.getY();
  //if
-  X=DistX-XMove;
-  Y=DistY-YMove;
+
   Smash.move(DistX-XMove,DistY-YMove);
 
     if(Smash.getX()>=600)
@@ -264,6 +282,7 @@ Smash.clickSwap();
     {
      Smash.leftSwap();
   }
+  	Smash.move(DistX-25,DistY-25);
 
   repaint();
 
@@ -273,7 +292,8 @@ Smash.clickSwap();
   int DistX=e.getX();
   int DistY=e.getY();
   //if() {
-  Smash.move(DistX-XMove,DistY-YMove);
+	  Smash.move(DistX-25,DistY-25);
+
 
   if(Smash.getX()>=600)
   {
@@ -324,7 +344,8 @@ Smash.clickSwap();
    lose=getAudioClip(getDocumentBase(),"madlad.wav");
    bear=getImage(getDocumentBase(),"polarbear.png");
    background=getAudioClip(getDocumentBase(),"Chubbycat.wav");
- background.loop();
+	 background.loop();
+
 
   }
   public class drawingPanel extends JPanel
@@ -352,7 +373,17 @@ Smash.clickSwap();
 
      Smash.draw(g);
 
+		if(check==true)
+		{
+			g.drawImage(bear,830,500,this);
+		}
+
     }
+	/*	 if(check==true)
+		 {
+			 g.drawImage(bear,1000,500,this);
+		 }
+		 */
 
    }
 
