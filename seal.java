@@ -1,5 +1,4 @@
 
-
 import java.awt.*;
 import java.util.Random;
 
@@ -11,6 +10,7 @@ public class seal
 	Random r=new Random();
 	int circle1;
 	boolean check;
+	int activetime;
 	public seal(Image happy,Image sad )
 	{
 		this.happy=happy;
@@ -83,6 +83,16 @@ public class seal
 		public void setY(int yy)
 		{
 			y=yy;
+		}
+		public void timeCheck(int potato)
+		{
+			activetime=potato;
+			System.out.println(activetime);
+
+		}
+		public int getTime()
+		{
+			return activetime;
 		}
 
 
